@@ -1,0 +1,223 @@
+INFO:root:found model: User (table: users)
+INFO:root:  found mapping: created_at ==> <FloatField, real:None>
+INFO:root:  found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:  found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:  found mapping: passwd ==> <StringField, varchar(50):None>
+INFO:root:  found mapping: admin ==> <BooleanField, boolean:None>
+INFO:root:  found mapping: image ==> <StringField, varchar(500):None>
+INFO:root:  found mapping: email ==> <StringField, varchar(50):None>
+INFO:root:found model: Blog (table: blogs)
+INFO:root:  found mapping: summary ==> <StringField, varchar(200):None>
+INFO:root:  found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:  found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:  found mapping: content ==> <TextField, text:None>
+INFO:root:  found mapping: created_at ==> <FloatField, real:None>
+INFO:root:  found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:  found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:  found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found model: Comment (table: comments)
+INFO:root:  found mapping: created_at ==> <FloatField, real:None>
+INFO:root:  found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:  found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:  found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:  found mapping: content ==> <TextField, text:None>
+INFO:root:  found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:  found mapping: blog_id ==> <StringField, varchar(50):None>
+INFO:root:create database connection pool...
+INFO:root:init jinja2...
+INFO:root:set jinja2 template path: /home/zhujh_blog/www/templates
+INFO:root:add route GET /api/blogs => api_blogs(page)
+INFO:root:add route GET /api/comments => api_comments(page)
+INFO:root:add route POST /api/blogs => api_create_blog(request, name, summary, content)
+INFO:root:add route POST /api/blogs/{id}/comments => api_create_comment(id, request, content)
+INFO:root:add route POST /api/blogs/{id}/delete => api_delete_blog(request, id)
+INFO:root:add route POST /api/comments/{id}/delete => api_delete_comments(id, request)
+INFO:root:add route GET /api/blogs/{id} => api_get_blog(id)
+INFO:root:add route GET /api/users => api_get_users(page)
+INFO:root:add route POST /api/users => api_register_user(email, name, passwd)
+INFO:root:add route POST /api/blogs/{id} => api_update_blog(id, request, name, summary, content)
+INFO:root:add route POST /api/authenticate => authenticate(email, passwd)
+INFO:root:add route GET /blog/{id} => get_blog(id)
+INFO:root:add route GET / => index(page)
+INFO:root:add route GET /manage/ => manage()
+INFO:root:add route GET /manage/blogs => manage_blogs(page)
+INFO:root:add route GET /manage/comments => manage_comments(page)
+INFO:root:add route GET /manage/blogs/create => manage_create_blog()
+INFO:root:add route GET /manage/blogs/edit => manage_edit_blog(id)
+INFO:root:add route GET /manage/users => manage_users(page)
+INFO:root:add route GET /register => register()
+INFO:root:add route GET /signin => signin()
+INFO:root:add route GET /signout => signout(request)
+INFO:root:add static /static/ => /home/zhujh_blog/www/static
+INFO:root:server started at http://120.27.4.239:80...
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:180.153.229.139 - - [16/Aug/2016:06:53:27 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 123013"
+INFO:root:Request: GET /
+INFO:root:check user: GET /
+INFO:root:Response handler...
+INFO:root:call with args: {}
+INFO:root:SQL: select count(id) _num_ from `blogs`
+INFO:root:rows returned: 1
+INFO:root:SQL: select `id`, `summary`, `user_image`, `content`, `created_at`, `user_id`, `user_name`, `name` from `blogs` order by created_at desc limit ?, ?
+INFO:root:rows returned: 9
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:30 +0000] "GET / HTTP/1.1" 200 8672 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/css/uikit.min.css
+INFO:root:check user: GET /static/css/uikit.min.css
+INFO:root:Response handler...
+INFO:root:Request: GET /static/css/uikit.gradient.min.css
+INFO:root:check user: GET /static/css/uikit.gradient.min.css
+INFO:root:Response handler...
+INFO:root:Request: GET /static/css/awesome.css
+INFO:root:check user: GET /static/css/awesome.css
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:30 +0000] "GET /static/css/awesome.css HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/sha1.min.js
+INFO:root:check user: GET /static/js/sha1.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:30 +0000] "GET /static/js/sha1.min.js HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/jquery.min.js
+INFO:root:check user: GET /static/js/jquery.min.js
+INFO:root:Response handler...
+INFO:root:Request: GET /static/js/uikit.min.js
+INFO:root:check user: GET /static/js/uikit.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:30 +0000] "GET /static/js/uikit.min.js HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/sticky.min.js
+INFO:root:check user: GET /static/js/sticky.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:30 +0000] "GET /static/js/sticky.min.js HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/vue.min.js
+INFO:root:check user: GET /static/js/vue.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:30 +0000] "GET /static/js/vue.min.js HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/awesome.js
+INFO:root:check user: GET /static/js/awesome.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:30 +0000] "GET /static/js/awesome.js HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:30 +0000] "GET /static/css/uikit.min.css HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:30 +0000] "GET /static/css/uikit.gradient.min.css HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:31 +0000] "GET /static/js/jquery.min.js HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/fonts/fontawesome-webfont.woff
+INFO:root:check user: GET /static/fonts/fontawesome-webfont.woff
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:32 +0000] "GET /static/fonts/fontawesome-webfont.woff HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /
+INFO:root:check user: GET /
+INFO:root:Response handler...
+INFO:root:call with args: {}
+INFO:root:SQL: select count(id) _num_ from `blogs`
+INFO:root:rows returned: 1
+INFO:root:SQL: select `id`, `summary`, `user_image`, `content`, `created_at`, `user_id`, `user_name`, `name` from `blogs` order by created_at desc limit ?, ?
+INFO:root:rows returned: 9
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:38 +0000] "GET / HTTP/1.1" 200 8672 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /
+INFO:root:check user: GET /
+INFO:root:Response handler...
+INFO:root:call with args: {}
+INFO:root:SQL: select count(id) _num_ from `blogs`
+INFO:root:rows returned: 1
+INFO:root:SQL: select `id`, `summary`, `user_image`, `content`, `created_at`, `user_id`, `user_name`, `name` from `blogs` order by created_at desc limit ?, ?
+INFO:root:rows returned: 9
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:52 +0000] "GET / HTTP/1.1" 200 8672 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/css/uikit.min.css
+INFO:root:check user: GET /static/css/uikit.min.css
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:52 +0000] "GET /static/css/uikit.min.css HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/css/uikit.gradient.min.css
+INFO:root:check user: GET /static/css/uikit.gradient.min.css
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:52 +0000] "GET /static/css/uikit.gradient.min.css HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/css/awesome.css
+INFO:root:check user: GET /static/css/awesome.css
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:52 +0000] "GET /static/css/awesome.css HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/jquery.min.js
+INFO:root:check user: GET /static/js/jquery.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:52 +0000] "GET /static/js/jquery.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/uikit.min.js
+INFO:root:check user: GET /static/js/uikit.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:52 +0000] "GET /static/js/uikit.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/vue.min.js
+INFO:root:check user: GET /static/js/vue.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:52 +0000] "GET /static/js/vue.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/sticky.min.js
+INFO:root:check user: GET /static/js/sticky.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:52 +0000] "GET /static/js/sticky.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/sha1.min.js
+INFO:root:check user: GET /static/js/sha1.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:52 +0000] "GET /static/js/sha1.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/awesome.js
+INFO:root:check user: GET /static/js/awesome.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:52 +0000] "GET /static/js/awesome.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /
+INFO:root:check user: GET /
+INFO:root:Response handler...
+INFO:root:call with args: {}
+INFO:root:SQL: select count(id) _num_ from `blogs`
+INFO:root:rows returned: 1
+INFO:root:SQL: select `id`, `summary`, `user_image`, `content`, `created_at`, `user_id`, `user_name`, `name` from `blogs` order by created_at desc limit ?, ?
+INFO:root:rows returned: 9
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:54 +0000] "GET / HTTP/1.1" 200 8672 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/fonts/fontawesome-webfont.woff
+INFO:root:check user: GET /static/fonts/fontawesome-webfont.woff
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:54 +0000] "GET /static/fonts/fontawesome-webfont.woff HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:180.153.229.139 - - [16/Aug/2016:06:53:57 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 123013"
+INFO:root:Request: GET /
+INFO:root:check user: GET /
+INFO:root:Response handler...
+INFO:root:call with args: {}
+INFO:root:SQL: select count(id) _num_ from `blogs`
+INFO:root:rows returned: 1
+INFO:root:SQL: select `id`, `summary`, `user_image`, `content`, `created_at`, `user_id`, `user_name`, `name` from `blogs` order by created_at desc limit ?, ?
+INFO:root:rows returned: 9
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:53:59 +0000] "GET / HTTP/1.1" 200 8672 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /
+INFO:root:check user: GET /
+INFO:root:Response handler...
+INFO:root:call with args: {}
+INFO:root:SQL: select count(id) _num_ from `blogs`
+INFO:root:rows returned: 1
+INFO:root:SQL: select `id`, `summary`, `user_image`, `content`, `created_at`, `user_id`, `user_name`, `name` from `blogs` order by created_at desc limit ?, ?
+INFO:root:rows returned: 9
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:54:11 +0000] "GET / HTTP/1.1" 200 8672 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /
+INFO:root:check user: GET /
+INFO:root:Response handler...
+INFO:root:call with args: {}
+INFO:root:SQL: select count(id) _num_ from `blogs`
+INFO:root:rows returned: 1
+INFO:root:SQL: select `id`, `summary`, `user_image`, `content`, `created_at`, `user_id`, `user_name`, `name` from `blogs` order by created_at desc limit ?, ?
+INFO:root:rows returned: 9
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:54:15 +0000] "GET / HTTP/1.1" 200 8672 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/uikit.min.js
+INFO:root:check user: GET /static/js/uikit.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:54:15 +0000] "GET /static/js/uikit.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/vue.min.js
+INFO:root:check user: GET /static/js/vue.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:54:15 +0000] "GET /static/js/vue.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/awesome.js
+INFO:root:check user: GET /static/js/awesome.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:54:15 +0000] "GET /static/js/awesome.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/sha1.min.js
+INFO:root:check user: GET /static/js/sha1.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:54:15 +0000] "GET /static/js/sha1.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/sticky.min.js
+INFO:root:check user: GET /static/js/sticky.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:54:15 +0000] "GET /static/js/sticky.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
