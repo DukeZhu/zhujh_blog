@@ -221,3 +221,198 @@ INFO:root:Request: GET /static/js/sticky.min.js
 INFO:root:check user: GET /static/js/sticky.min.js
 INFO:root:Response handler...
 INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:54:15 +0000] "GET /static/js/sticky.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /blog/001471049361323a623cbf8d78641f69e760aa6bfda65b1000
+INFO:root:check user: GET /blog/001471049361323a623cbf8d78641f69e760aa6bfda65b1000
+INFO:root:Response handler...
+INFO:root:call with args: {'id': '001471049361323a623cbf8d78641f69e760aa6bfda65b1000'}
+INFO:root:SQL: select `id`, `summary`, `user_image`, `content`, `created_at`, `user_id`, `user_name`, `name` from `blogs` where `id`=?
+INFO:root:rows returned: 1
+INFO:root:SQL: select `id`, `created_at`, `user_image`, `user_id`, `content`, `user_name`, `blog_id` from `comments` where blog_id=? order by created_at desc
+INFO:root:rows returned: 0
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /blog/001471049361323a623cbf8d78641f69e760aa6bfda65b1000 HTTP/1.1" 200 6892 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/css/uikit.gradient.min.css
+INFO:root:check user: GET /static/css/uikit.gradient.min.css
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /static/css/uikit.gradient.min.css HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/css/uikit.min.css
+INFO:root:check user: GET /static/css/uikit.min.css
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /static/css/uikit.min.css HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/jquery.min.js
+INFO:root:check user: GET /static/js/jquery.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /static/js/jquery.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/sha1.min.js
+INFO:root:check user: GET /static/js/sha1.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /static/js/sha1.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/css/awesome.css
+INFO:root:check user: GET /static/css/awesome.css
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /static/css/awesome.css HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/uikit.min.js
+INFO:root:check user: GET /static/js/uikit.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /static/js/uikit.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/vue.min.js
+INFO:root:check user: GET /static/js/vue.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /static/js/vue.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/awesome.js
+INFO:root:check user: GET /static/js/awesome.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /static/js/awesome.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/js/sticky.min.js
+INFO:root:check user: GET /static/js/sticky.min.js
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /static/js/sticky.min.js HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: GET /static/fonts/fontawesome-webfont.woff
+INFO:root:check user: GET /static/fonts/fontawesome-webfont.woff
+INFO:root:Response handler...
+INFO:aiohttp.access:60.207.237.46 - - [16/Aug/2016:06:55:09 +0000] "GET /static/fonts/fontawesome-webfont.woff HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:115.29.113.101 - - [16/Aug/2016:06:55:27 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"
+INFO:root:Request: GET /plugin.php
+INFO:root:check user: GET /plugin.php
+INFO:root:Response handler...
+INFO:aiohttp.access:123.125.71.53 - - [16/Aug/2016:06:55:32 +0000] "GET /plugin.php?id=wechat:qrcode&tid=100&qrsize=2&access=yes HTTP/1.1" 404 14 "-" "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:112.126.75.174 - - [16/Aug/2016:06:56:03 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:119.167.246.15 - - [16/Aug/2016:06:57:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:119.167.246.15 - - [16/Aug/2016:06:57:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:117.34.28.13 - - [16/Aug/2016:06:57:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:183.61.236.15 - - [16/Aug/2016:06:57:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:117.27.149.13 - - [16/Aug/2016:06:57:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:117.34.28.13 - - [16/Aug/2016:06:57:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:117.27.149.13 - - [16/Aug/2016:06:57:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:183.61.236.15 - - [16/Aug/2016:06:57:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:112.124.127.64 - - [16/Aug/2016:06:57:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:180.153.229.139 - - [16/Aug/2016:06:57:45 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 123013"
+INFO:root:Request: GET /blog/001471049361323a623cbf8d78641f69e760aa6bfda65b1000
+INFO:root:check user: GET /blog/001471049361323a623cbf8d78641f69e760aa6bfda65b1000
+INFO:root:Response handler...
+INFO:root:call with args: {'id': '001471049361323a623cbf8d78641f69e760aa6bfda65b1000'}
+INFO:root:SQL: select `id`, `summary`, `user_image`, `content`, `created_at`, `user_id`, `user_name`, `name` from `blogs` where `id`=?
+INFO:root:rows returned: 1
+INFO:root:SQL: select `id`, `created_at`, `user_image`, `user_id`, `content`, `user_name`, `blog_id` from `comments` where blog_id=? order by created_at desc
+INFO:root:rows returned: 0
+INFO:aiohttp.access:61.151.226.202 - - [16/Aug/2016:06:58:09 +0000] "GET /blog/001471049361323a623cbf8d78641f69e760aa6bfda65b1000 HTTP/1.1" 200 6892 "-" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"
+INFO:root:Request: GET /blog/001471049361323a623cbf8d78641f69e760aa6bfda65b1000
+INFO:root:check user: GET /blog/001471049361323a623cbf8d78641f69e760aa6bfda65b1000
+INFO:root:Response handler...
+INFO:root:call with args: {'id': '001471049361323a623cbf8d78641f69e760aa6bfda65b1000'}
+INFO:root:SQL: select `id`, `summary`, `user_image`, `content`, `created_at`, `user_id`, `user_name`, `name` from `blogs` where `id`=?
+INFO:root:rows returned: 1
+INFO:root:SQL: select `id`, `created_at`, `user_image`, `user_id`, `content`, `user_name`, `blog_id` from `comments` where blog_id=? order by created_at desc
+INFO:root:rows returned: 0
+INFO:aiohttp.access:101.226.68.197 - - [16/Aug/2016:06:58:09 +0000] "GET /blog/001471049361323a623cbf8d78641f69e760aa6bfda65b1000 HTTP/1.1" 200 6892 "-" "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:180.153.229.139 - - [16/Aug/2016:06:58:16 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 123013"
+INFO:root:Request: GET /forum.php
+INFO:root:check user: GET /forum.php
+INFO:root:Response handler...
+INFO:aiohttp.access:66.249.65.190 - - [16/Aug/2016:06:59:04 +0000] "GET /forum.php?mod=forumdisplay&fid=62&filter=hot HTTP/1.1" 404 14 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:115.29.113.101 - - [16/Aug/2016:07:00:27 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:112.126.75.174 - - [16/Aug/2016:07:01:03 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:112.124.127.64 - - [16/Aug/2016:07:02:02 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:180.153.229.139 - - [16/Aug/2016:07:02:42 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 123013"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:180.153.229.139 - - [16/Aug/2016:07:03:14 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 123013"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:115.29.113.101 - - [16/Aug/2016:07:05:27 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:112.126.75.174 - - [16/Aug/2016:07:06:03 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:119.167.246.15 - - [16/Aug/2016:07:07:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:119.167.246.15 - - [16/Aug/2016:07:07:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:117.34.28.13 - - [16/Aug/2016:07:07:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:183.61.236.15 - - [16/Aug/2016:07:07:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:117.27.149.14 - - [16/Aug/2016:07:07:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:117.34.28.13 - - [16/Aug/2016:07:07:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:117.27.149.14 - - [16/Aug/2016:07:07:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:183.61.236.15 - - [16/Aug/2016:07:07:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Baidu-YunGuanCe-SLABot(ce.baidu.com)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:112.124.127.64 - - [16/Aug/2016:07:07:01 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"
+INFO:root:Request: HEAD /
+INFO:root:check user: HEAD /
+INFO:root:Response handler...
+INFO:aiohttp.access:180.153.229.139 - - [16/Aug/2016:07:07:47 +0000] "HEAD / HTTP/1.1" 405 0 "-" "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322) 360JK yunjiankong 123013"
