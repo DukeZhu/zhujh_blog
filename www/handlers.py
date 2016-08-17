@@ -78,12 +78,15 @@ def cookie2user(cookie_str):
 @get('/')
 def index(*, page='1'):
     page_index = get_page_index(page)
+    logging.info(page_index)
     num = yield from Blog.findNumber('count(id)')
-    page = Page(num)
+    page = Page(num,page_index)
     if num == 0:
         blogs = []
     else:
         blogs = yield from Blog.findAll(orderBy='created_at desc', limit=(page.offset, page.limit))
+    #yield from logging.info(num)
+    #yield from logging.info(str(page)) 
     return {
         '__template__': 'blogs.html',
         'page': page,
