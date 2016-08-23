@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from www.models import Category
+from models import Category
 
 __author__ = 'Michael Liao'
 
