@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from www.models import Category
 
 __author__ = 'Michael Liao'
 
@@ -85,12 +86,36 @@ def index(*, page='1'):
         blogs = []
     else:
         blogs = yield from Blog.findAll(orderBy='created_at desc', limit=(page.offset, page.limit))
+    categories = yield from Category.findAll(orderBy='created_at desc')
     #yield from logging.info(num)
-    #yield from logging.info(str(page)) 
+    #yield from logging.info(str(page))
+
     return {
         '__template__': 'blogs.html',
         'page': page,
-        'blogs': blogs
+        'blogs': blogs,
+        'categories':categories,
+    }
+
+@get('/blog/category/{name}')
+def get_category(name,page='1'):
+    page_index = get_page_index(page)
+    logging.info(page_index)
+    tblogs = yield from Blog.findAll('category_name=?', [name])
+    num = len(tblogs)
+    page = Page(num, page_index)
+    if num == 0:
+        blogs = []
+    else:
+  #  num = yield from Category.findNumber('count(id)')
+        blogs = yield from Blog.findAll('category_name=?', [name], orderBy='created_at desc',limit=(page.offset, page.limit))
+    categories = yield from Category.findAll(orderBy='created_at desc')
+    return {
+        '__template__': 'blogs.html',
+        'page': page,
+        'blogs': blogs,
+        'categories': categories,
+        'incategory': True
     }
 
 @get('/blog/{id}')
@@ -174,7 +199,7 @@ def manage_create_blog():
     return {
         '__template__': 'manage_blog_edit.html',
         'id': '',
-        'action': '/api/blogs'
+        'action': '/api/blogs',
     }
 
 @get('/manage/blogs/edit')
@@ -182,7 +207,7 @@ def manage_edit_blog(*, id):
     return {
         '__template__': 'manage_blog_edit.html',
         'id': id,
-        'action': '/api/blogs/%s' % id
+        'action': '/api/blogs/%s' % id,
     }
 
 @get('/manage/users')
@@ -279,29 +304,42 @@ def api_get_blog(*, id):
     return blog
 
 @post('/api/blogs')
-def api_create_blog(request, *, name, summary, content):
+def api_create_blog(request, *, name, category,summary, content):
     check_admin(request)
     if not name or not name.strip():
         raise APIValueError('name', 'name cannot be empty.')
+    if not category or not category.strip():
+        raise APIValueError('category', 'category cannot be empty.')
     if not summary or not summary.strip():
         raise APIValueError('summary', 'summary cannot be empty.')
     if not content or not content.strip():
         raise APIValueError('content', 'content cannot be empty.')
-    blog = Blog(user_id=request.__user__.id, user_name=request.__user__.name, user_image=request.__user__.image, name=name.strip(), summary=summary.strip(), content=content.strip())
+    category_1 = yield from Category.findAll('name=?', [category.strip()])
+    if not category_1:
+        category_1 = Category(user_id=request.__user__.id, name=category.strip())
+        yield from category_1.save()
+    blog = Blog(category_name=category_1.name,user_id=request.__user__.id, user_name=request.__user__.name, user_image=request.__user__.image, name=name.strip(),summary=summary.strip(), content=content.strip())
     yield from blog.save()
     return blog
 
 @post('/api/blogs/{id}')
-def api_update_blog(id, request, *, name, summary, content):
+def api_update_blog(id, request, *, name, category,summary, content):
     check_admin(request)
     blog = yield from Blog.find(id)
     if not name or not name.strip():
         raise APIValueError('name', 'name cannot be empty.')
+    if not category or not category.strip():
+        raise APIValueError('category', 'category cannot be empty.')
     if not summary or not summary.strip():
         raise APIValueError('summary', 'summary cannot be empty.')
     if not content or not content.strip():
         raise APIValueError('content', 'content cannot be empty.')
+    category_1 = yield from Category.findAll('name=?', [category.strip()])
+    if not category_1:
+        category_1 = Category(user_id=request.__user__.id, name=category.strip())
+        yield from category_1.save()
     blog.name = name.strip()
+    blog.category_name = category.strip()
     blog.summary = summary.strip()
     blog.content = content.strip()
     yield from blog.update()

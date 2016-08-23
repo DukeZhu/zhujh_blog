@@ -34,6 +34,14 @@
                 <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="http://open.163.com/">公开课</a></li>
             </ul>
         </div>
+       <div class="uk-panel uk-panel-header">
+            <h3 class="uk-panel-title">分类浏览</h3>
+            <ul class="uk-list uk-list-line">
+                {% for category in categories %}
+                <li><i class="uk-icon-thumbs-o-up"></i> <a href="/blog/category/{{ category.name }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
 {% endblock %}
