@@ -318,7 +318,7 @@ def api_create_blog(request, *, name, category,summary, content):
     if not category_1:
         category_1 = Category(user_id=request.__user__.id, name=category.strip())
         yield from category_1.save()
-    blog = Blog(category_name=category_1.name,user_id=request.__user__.id, user_name=request.__user__.name, user_image=request.__user__.image, name=name.strip(),summary=summary.strip(), content=content.strip())
+    blog = Blog(category_name=category.strip(),user_id=request.__user__.id, user_name=request.__user__.name, user_image=request.__user__.image, name=name.strip(),summary=summary.strip(), content=content.strip())
     yield from blog.save()
     return blog
 
